@@ -63,5 +63,8 @@ for handle in HANDLES:
                 break
     except:
         continue
+        # TEST MESSAGE - Har run pe ayega ki bot zinda hai
+send_msg(f"✅ Bot Live! {len(HANDLES)} handles scanned at 09:xx AM - No tremor now. All clear.")
+print(f"Scanned {len(HANDLES)} handles - Done")
 
 print(f"Scanned {len(HANDLES)} handles - Done")
