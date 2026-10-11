@@ -2,8 +2,8 @@ name: Bharat Tremor Tracker
 
 on:
   schedule:
-    - cron: '*/15 * * * *' # Har 15 minute me chalega - FREE LIMIT ME
-  workflow_dispatch: # Manual run button bhi dega
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
 
 jobs:
   check-tremor:
