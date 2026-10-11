@@ -1,0 +1,27 @@
+name: Bharat Tremor Tracker
+
+on:
+  schedule:
+    - cron: '*/15 * * * *' # Har 15 minute me chalega - FREE LIMIT ME
+  workflow_dispatch: # Manual run button bhi dega
+
+jobs:
+  check-tremor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code lao
+        uses: actions/checkout@v4
+
+      - name: Python setup
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Lib install karo
+        run: pip install feedparser requests
+
+      - name: Tracker chalao
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: python tracker.py
